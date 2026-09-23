@@ -189,12 +189,11 @@ body {
     width: 300px;
     height: 300px;
     object-fit: cover;
-    object-position: 72% 20%; 
+    object-position: 50% 43%; /* Remonte légèrement le visage */
     border-radius: 50%;
     border: 3px solid #ffffff;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
-
 .about-content {
     max-width: 700px;
     text-align: center;
@@ -473,7 +472,7 @@ body {
         width: 220px;
         height: 220px;
         object-fit: cover;
-        object-position: 72% 20%;
+        object-position: 50% 43%;
     }
     .expertises-grid {
         grid-template-columns: 1fr;
