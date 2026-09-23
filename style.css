@@ -1,29 +1,28 @@
 /* Décalage sous le header fixe avec un espace d'aération */
 html {
-    scroll-padding-top: 130px; /* Augmenté à 130px pour créer la marge sous le header */
-    scroll-behavior: smooth;   /* Défilement fluide */
+    scroll-padding-top: 130px;
+    scroll-behavior: smooth;
 }
 
-/* Ajustement spécifique pour mobile où le header est plus haut */
 @media (max-width: 900px) {
     html {
-        scroll-padding-top: 150px; /* Espacement adapté au menu empilé sur mobile */
+        scroll-padding-top: 150px;
     }
 }
 
 /* Variables de couleurs - Bleu Foncé & Ocre */
 :root {
-    --ochre-accent: #cc9352;     /* Jaune ocre chaud & terreux */
-    --ochre-dark: #633f17;       /* Ocre foncé pour liens et contrastes forts */
-    --dark-bg: #0f141c;          /* Fond principal : Bleu très foncé / Nuit */
-    --alt-bg: #cc9352;           /* Fond alternatif : Ocre */
-    --card-dark-bg: #1a2332;     /* Fond des cartes sur section sombre */
-    --card-light-bg: #e0b077;    /* Fond des cartes/encadrés sur section ocre */
-    --dark-text: #170d03;        /* Texte sombre très lisible sur fond ocre */
-    --light-text: #f0f4f8;       /* Texte clair sur fond bleu foncé */
-    --white-text: #ffffff;       /* Titres principaux */
-    --border-dark: #2c3e50;      /* Bordures pour sections sombres */
-    --border-light: #b0783b;     /* Bordures pour sections ocre */
+    --ochre-accent: #cc9352;
+    --ochre-dark: #633f17;
+    --dark-bg: #0f141c;
+    --alt-bg: #cc9352;
+    --card-dark-bg: #1a2332;
+    --card-light-bg: #e0b077;
+    --dark-text: #170d03;
+    --light-text: #f0f4f8;
+    --white-text: #ffffff;
+    --border-dark: #2c3e50;
+    --border-light: #b0783b;
 }
 
 * {
@@ -37,7 +36,7 @@ body {
     background-color: var(--dark-bg);
     color: var(--light-text);
     line-height: 1.6;
-    overflow-x: hidden; /* Empêche tout défilement horizontal intempestif */
+    overflow-x: hidden;
 }
 
 /* Header & Nav */
@@ -88,7 +87,6 @@ body {
     color: var(--ochre-accent);
 }
 
-/* Séparateur vertical entre les éléments du menu (plus épais et bien visible) */
 .nav-links li:not(:last-child)::after {
     content: "|";
     margin-left: 20px;
@@ -163,9 +161,7 @@ body {
     color: var(--light-text);
 }
 
-/* ==========================================================================
-   Section Votre Avocat (Section Ocre)
-   ========================================================================== */
+/* Section Votre Avocat (Section Ocre) */
 .about {
     padding: 80px 50px;
     background-color: var(--alt-bg);
@@ -193,15 +189,12 @@ body {
     width: 300px;
     height: 300px;
     object-fit: cover;
-    
-    /* 72% horizontal : recentre idéalement le visage au milieu du cercle
-       20% vertical : maintient la bonne hauteur pour la tête */
     object-position: 72% 20%; 
-    
     border-radius: 50%;
     border: 3px solid #ffffff;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
+
 .about-content {
     max-width: 700px;
     text-align: center;
@@ -231,18 +224,6 @@ body {
 .honoraires .btn-cta:hover {
     background-color: transparent;
     color: var(--dark-bg);
-}
-}
-
-@media (max-width: 900px) {
-    /* ... vos autres règles mobile ... */
-
-    .about-image img {
-        width: 220px;
-        height: 220px;
-        object-fit: cover;
-        object-position: 72% 20%; /* Cadrage parfait sur smartphone */
-    }
 }
 
 /* Section Expertises (Section Bleu Foncé) */
@@ -317,7 +298,7 @@ body {
     margin-top: 10px;
 }
 
-/* Page Formulaire Contact (Formulaire Ocre sur Fond Bleu Foncé) */
+/* Page Formulaire Contact */
 .contact-page {
     background-color: var(--dark-bg);
     padding: 60px 20px;
@@ -442,9 +423,7 @@ body {
     font-size: 0.8rem;
 }
 
-/* ==========================================================================
-   Responsive Mobile Optimisé
-   ========================================================================== */
+/* Responsive Mobile Optimisé */
 @media (max-width: 900px) {
     .header {
         padding: 35px 15px 15px 15px;
@@ -490,13 +469,12 @@ body {
         align-items: center;
         gap: 25px;
     }
-    
-    /* Maintien du cercle parfait et ajustement de taille pour mobile */
     .about-image img {
         width: 220px;
-        height: 220px; /* Évite la déformation ovale */
+        height: 220px;
+        object-fit: cover;
+        object-position: 72% 20%;
     }
-
     .expertises-grid {
         grid-template-columns: 1fr;
     }
@@ -506,5 +484,4 @@ body {
     .contact-form-container {
         padding: 25px 15px;
     }
-}
 }
