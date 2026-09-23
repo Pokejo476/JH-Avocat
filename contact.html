@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Johann HELLEBOID Avocat</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="nav-container">
+            <div class="logo"><a href="index.html" style="color: white; text-decoration: none;">Johann HELLEBOID Avocat</a></div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html#presentation">Présentation</a></li>
+                    <li><a href="index.html#votre-avocat">Votre Avocat</a></li>
+                    <li><a href="index.html#expertises">Expertises</a></li>
+                    <li><a href="index.html#honoraires">Honoraires</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="contact-page">
+        <div class="contact-form-container">
+            <h2>CONTACTER VOTRE AVOCAT</h2>
+            <p class="contact-intro">Veuillez remplir le formulaire ci-dessous pour toute demande de conseil ou d'assistance en droit fiscal.</p>
+
+            <!-- Formulaire relié à votre compte Formspree -->
+            <form action="https://formspree.io/f/mbglojoq" method="POST" class="contact-form">
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="nom">Nom de famille *</label>
+                        <input type="text" id="nom" name="nom" required placeholder="Votre nom">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="prenom">Prénom *</label>
+                        <input type="text" id="prenom" name="prenom" required placeholder="Votre prénom">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="telephone">Numéro de téléphone *</label>
+                        <input type="tel" id="telephone" name="telephone" required placeholder="06 00 00 00 00">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Adresse mail *</label>
+                        <input type="email" id="email" name="_replyto" required placeholder="votre.email@exemple.com">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="objet">Objet de votre demande *</label>
+                    <input type="text" id="objet" name="_subject" required placeholder="Ex : Contrôle fiscal, Conseil en TVA, Fiscalité immobilière...">
+                </div>
+
+                <div class="form-group">
+                    <label for="demande">Votre demande *</label>
+                    <textarea id="demande" name="demande" rows="6" required placeholder="Décrivez succinctement votre situation..."></textarea>
+                </div>
+
+                <button type="submit" class="btn-cta btn-submit">Envoyer la demande</button>
+                
+                <p class="rgpd-notice" style="font-size: 0.8rem; color: #666; margin-top: 15px;">
+                    * Les informations recueillies font l'objet d'un traitement informatique destiné exclusivement à traiter votre demande. Conformément à la réglementation RGPD, vous disposez d'un droit d'accès, de rectification et de suppression de vos données en contactant le cabinet.
+                </p>
+            </form>
+
+            <div class="contact-direct-info">
+                <h3>Coordonnées du cabinet</h3>
+                <p>Johann HELLEBOID Avocat</p>
+                <p>7 Rue des Deux Portes, 78000 Versailles</p>
+                <p>Téléphone : +33 6 75 17 06 15</p>
+                <p>E-mail : helleboidj@tutamail.com</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <p><strong>Johann HELLEBOID Avocat</strong> - Barreau de Versailles</p>
+            <p>7 Rue des Deux Portes, 78000 Versailles | Tél : +33 6 75 17 06 15 | E-mail : helleboidj@tutamail.com</p>
+            <p><a href="mentions-legales.html" style="color: #bbb; text-decoration: underline;">Mentions légales & Confidentialité</a></p>
+            <p class="copyright">&copy; 2026 Johann HELLEBOID. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
