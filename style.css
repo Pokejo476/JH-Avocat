@@ -39,7 +39,6 @@ body {
     overflow-x: hidden;
 }
 
-/* Header & Nav */
 .header {
     background-color: #0a0d14;
     color: var(--white-text);
@@ -48,7 +47,8 @@ body {
     position: sticky;
     top: 0;
     z-index: 1000;
-    border-bottom: 1px solid var(--border-dark);
+    border-bottom: 2px solid var(--ochre-accent); /* Ligne ocre claire nette de 2px */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); /* Ombre sous le header pour accentuer le relief */
     width: 100%;
 }
 
