@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Johann HELLEBOID Tax Lawyer - Versailles</title>
+    <link rel="stylesheet" href="style.css?v=2">
+    <style>
+        .hero.contact-hero {
+            position: relative;
+            background-image: linear-gradient(rgba(15, 20, 28, 0.75), rgba(15, 20, 28, 0.75)), url('Château Versailles.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 290px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 50px;
+            border-bottom: 1px solid var(--border-dark);
+        }
+        .hero.contact-hero .presentation-header {
+            width: 100%;
+            max-width: 1200px;
+        }
+        .contact-section {
+            background-color: var(--alt-bg) !important;
+            padding: 60px 50px;
+            border-bottom: 1px solid var(--border-light);
+        }
+    </style>
+</head>
+<body class="page-contact">
+
+    <!-- Header Navigation -->
+    <header class="header">
+        <div class="nav-container">
+            <div class="logo"><a href="index-en.html" style="color: white; text-decoration: none;">Johann HELLEBOID Tax Lawyer</a></div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index-en.html#presentation">About</a></li>
+                    <li><a href="index-en.html#votre-avocat">Your Lawyer</a></li>
+                    <li><a href="index-en.html#expertises">Practice Areas</a></li>
+                    <li><a href="index-en.html#honoraires">Fees</a></li>
+                    <li><a href="contact-en.html" class="active">Contact</a></li>
+                    <li class="lang-switch"><a href="contact.html">FR</a> | <a href="contact-en.html" class="active">EN</a> | <a href="contact-es.html">ES</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Contact Hero Section -->
+    <section class="hero contact-hero">
+        <div class="presentation-header">
+            <h1>CONTACT YOUR LAWYER</h1>
+            <p class="subtitle">Please complete the form below for any legal advice or assistance regarding French tax law.</p>
+        </div>
+    </section>
+
+    <!-- Contact Content Section -->
+    <section class="contact-section">
+        <div class="container contact-grid">
+            
+            <!-- Firm Information -->
+            <div class="card contact-info-card">
+                <h2>Firm Details</h2>
+                <hr class="gold-divider">
+                
+                <!-- Side-by-side Address + Map Block -->
+                <div class="address-map-block">
+                    <div class="address-details">
+                        <p><strong>Johann HELLEBOID Tax Lawyer</strong></p>
+                        <p>7 Rue des 2 Portes, 78000 Versailles, France</p>
+                        <p><strong>Phone:</strong> <a href="tel:+33675170615">+33 6 75 17 06 15</a></p>
+                        <p><strong>Email:</strong> <a href="mailto:helleboidj@tutamail.com">helleboidj@tutamail.com</a></p>
+                    </div>
+                    
+                    <div class="address-map">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2628.742337628867!2d2.1287913!3d48.8058728!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e67db053f3e951%3A0x6b77ad0a0fb0e3b9!2s7%20Rue%20des%202%20Portes%2C%2078000%20Versailles!5e0!3m2!1sen!2sfr!4v1700000000000!5m2!1sen!2sfr" 
+                            width="100%" 
+                            height="150" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                </div>
+
+                <h3>Opening Hours</h3>
+                <p>Monday to Sunday from 8:00 AM to 8:00 PM<br><em>By appointment only</em></p>
+
+                <h3>Public Transport Access</h3>
+                <ul>
+                    <li><strong>Train:</strong>
+                        <ul>
+                            <li>RER C station <em>Versailles Château Rive Gauche</em></li>
+                            <li>Transilien Line L station <em>Versailles Rive Droite</em></li>
+                        </ul>
+                    </li>
+                    <li><strong>Bus:</strong>
+                        <ul>
+                            <li>Stop <em>Notre-Dame</em> (6201, 6202, 6203, 6204, 6205, 6214)</li>
+                            <li>Stop <em>Château</em> (6214, 7826)</li>
+                            <li>Stop <em>Hôtel de ville</em> (171, 6123, 6161, 6162, 6163, 6185, 6204)</li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <h3>Nearby Parking</h3>
+                <ul>
+                    <li>Parking Indigo Versailles Marché Notre-Dame</li>
+                    <li>Parking Indigo Versailles Saint-Cloud</li>
+                    <li>Parking Europe Versailles</li>
+                </ul>
+            </div>
+
+            <!-- Contact Form -->
+            <div class="card contact-form-card">
+                <!-- Confirmation Message (Hidden by default) -->
+                <div id="confirmation-message" style="display: none; padding: 25px; background-color: var(--card-dark-bg); border: 1px solid var(--ochre-accent); border-radius: 4px; text-align: center; margin-bottom: 20px;">
+                    <h3 style="color: var(--ochre-accent); font-size: 1.4rem; margin-bottom: 15px;">Thank you for your message.</h3>
+                    <p style="color: var(--light-text); font-size: 1rem; line-height: 1.6;">
+                        Your inquiry has been successfully received. The firm will contact you as soon as possible.
+                    </p>
+                </div>
+
+                <form id="contactForm" action="https://formspree.io/f/mbglojoq" method="POST" class="contact-form" autocomplete="on">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="nom">Last Name *</label>
+                            <input type="text" id="nom" name="nom" placeholder="Your last name" required autocomplete="family-name">
+                        </div>
+                        <div class="form-group">
+                            <label for="prenom">First Name *</label>
+                            <input type="text" id="prenom" name="prenom" placeholder="Your first name" required autocomplete="given-name">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="telephone">Phone Number *</label>
+                            <input type="tel" id="telephone" name="telephone" placeholder="+33 6 00 00 00 00" required autocomplete="tel">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" placeholder="your.email@example.com" required autocomplete="email">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="objet">Subject *</label>
+                        <input type="text" id="objet" name="_subject" placeholder="Ex: Tax Audit, VAT Advisory, Crypto-assets..." required autocomplete="off">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Your Message *</label>
+                        <textarea id="message" name="message" rows="5" placeholder="Briefly describe your situation..." required></textarea>
+                    </div>
+
+                    <!-- Invisible Honeypot anti-spam field -->
+                    <input type="text" name="_gotcha" style="display:none">
+
+                    <div class="form-group checkbox-group">
+                        <input type="checkbox" id="rgpd" name="rgpd" required>
+                        <label for="rgpd">I accept the privacy policy and personal data protection terms.</label>
+                    </div>
+
+                    <button type="submit" id="submitBtn" class="btn-submit">Send Inquiry</button>
+                </form>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- JavaScript Script for handling form submission and showing confirmation -->
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            var form = this;
+            var btn = document.getElementById('submitBtn');
+            btn.innerText = 'Sending...';
+            btn.disabled = true;
+
+            var data = new FormData(form);
+
+            fetch(form.action, {
+                method: form.method,
+                body: data,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            }).then(function(response) {
+                if (response.ok) {
+                    form.style.display = 'none';
+                    document.getElementById('confirmation-message').style.display = 'block';
+                } else {
+                    response.json().then(function(data) {
+                        if (data && data.errors) {
+                            alert("Error: " + data.errors.map(function(error) { return error.message; }).join(", "));
+                        } else {
+                            alert("An error occurred while sending your message. Please try again.");
+                        }
+                    });
+                    btn.innerText = 'Send Inquiry';
+                    btn.disabled = false;
+                }
+            }).catch(function(error) {
+                alert("Connection error. If testing locally without a web server, the browser may block the submission.");
+                btn.innerText = 'Send Inquiry';
+                btn.disabled = false;
+            });
+        });
+    </script>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <p><strong>Johann HELLEBOID Tax Lawyer</strong> - Versailles Bar</p>
+            <p>7 Rue des Deux Portes, 78000 Versailles, France</p>
+            <p>Tel: +33 6 75 17 06 15</p>
+            <p>Email: helleboidj@tutamail.com</p>
+            <p><a href="mentions-legales-en.html" style="color: #bbb; text-decoration: underline;">Legal Notice & Privacy Policy</a></p>
+            <p class="copyright">&copy; 2026 Johann HELLEBOID. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Floating Contact Button -->
+    <a href="contact-en.html" class="floating-contact-btn">
+        Contact Your Lawyer
+    </a>
+
+</body>
+</html>
