@@ -464,6 +464,7 @@ body {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
     z-index: 1000;
 }
+
 /* Alignement Adresse + Carte côte à côte */
 .address-map-block {
     display: flex;
@@ -496,4 +497,87 @@ body {
     }
 }
 
-/* ==========================================
+/* =========================================================
+   ADAPTATION MOBILE & TABLETTE (RESPONSIVE DESIGN)
+   ========================================================= */
+
+@media screen and (max-width: 992px) {
+    /* Header et Navigation */
+    .nav-container {
+        flex-direction: column;
+        padding: 15px;
+        gap: 15px;
+    }
+    
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px 15px;
+    }
+
+    /* Hero / En-tête avec la photo du Château */
+    .hero, .hero.contact-hero {
+        height: auto !important;
+        min-height: 240px;
+        padding: 40px 20px !important;
+    }
+
+    .hero h1, .hero.contact-hero h1 {
+        font-size: 1.8rem;
+    }
+
+    .hero h2 {
+        font-size: 1.1rem;
+    }
+
+    .subtitle {
+        font-size: 0.95rem;
+    }
+
+    /* Layout des sections */
+    .about-container, 
+    .contact-grid {
+        grid-template-columns: 1fr !important;
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .about-image img {
+        max-width: 250px;
+        margin: 0 auto;
+        display: block;
+    }
+
+    /* Grille d'expertises et cartes */
+    .expertises-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    .contact-section {
+        padding: 30px 15px !important;
+    }
+
+    /* Bloc Adresse + Carte sur la page Contact */
+    .address-map-block {
+        flex-direction: column;
+    }
+
+    .address-map {
+        width: 100%;
+        margin-top: 15px;
+    }
+
+    /* Formulaire de contact */
+    .form-row {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    /* Bouton flottant de contact */
+    .floating-contact-btn {
+        bottom: 15px;
+        right: 15px;
+        padding: 10px 18px;
+        font-size: 0.85rem;
+    }
+}
