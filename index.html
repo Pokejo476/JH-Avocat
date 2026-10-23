@@ -4,9 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Johann HELLEBOID Avocat | Droit Fiscal à Versailles</title>
-    <link rel="stylesheet" href="style.css?v=2">
+    <link rel="stylesheet" href="style.css?v=8">
     <style>
-        /* Hauteur fixe rigoureusement identique pour le Hero sur toutes les pages */
         .hero {
             position: relative;
             background-image: linear-gradient(rgba(15, 20, 28, 0.75), rgba(15, 20, 28, 0.75)), url('Château Versailles.jpg');
@@ -30,92 +29,144 @@
 </head>
 <body>
 
-    <!-- Header Navigation -->
-    <header class="header">
-        <div class="nav-container">
-            <div class="logo">Johann HELLEBOID Avocat</div>
-            <nav>
-                <ul class="nav-links">
-                    <li><a href="#presentation">Cabinet</a></li>
-                    <li><a href="#votre-avocat">Votre Avocat</a></li>
-                    <li><a href="#expertises">Expertises</a></li>
-                    <li><a href="#honoraires">Honoraires</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                    <li class="lang-switch"><a href="index.html" class="active">FR</a> | <a href="index-en.html">EN</a> | <a href="index-es.html">ES</a></li>
-                </ul>
-            </nav>
+    <!-- Header Navigation avec Menu Burger -->
+<header class="header">
+    <div class="nav-container">
+        <!-- 1. Logo à gauche -->
+        <div class="logo"><a href="index.html">Johann HELLEBOID Avocat</a></div>
+
+        <!-- 2. Rubriques centrées -->
+        <nav id="mainNav">
+            <ul class="nav-links">
+                <li><a href="#votre-avocat">Votre Avocat</a></li>
+                <li><a href="#expertises">Expertises</a></li>
+                <li><a href="#honoraires">Honoraires</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+
+        <!-- 3. Sélecteur de langues (et burger mobile) à droite -->
+        <div class="header-right">
+            <div class="lang-switch-container">
+                <a href="index.html" class="active">FR</a> | <a href="index-en.html">EN</a> | <a href="index-es.html">ES</a>
+            </div>
+            <button class="burger-menu" id="burgerBtn" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
-    </header>
+    </div>
+</header>
 
     <!-- Presentation Section (Hero) -->
-    <section id="presentation" class="hero">
+    <section id="presentation" class="hero scroll-fade-in">
         <div class="presentation-header">
             <h1>Johann Helleboid</h1>
-            <h2>AVOCAT EN DROIT FISCAL — BARREAU DE VERSAILLES</h2>
+            <h2>AVOCAT EN DROIT FISCAL BARREAU DE VERSAILLES</h2>
             <p class="subtitle">Accompagnement fiscal en conseil et contentieux à Versailles et dans toute la France</p>
         </div>
     </section>
 
     <!-- About Section -->
-    <section id="votre-avocat" class="about">
+    <section id="votre-avocat" class="about scroll-fade-in">
         <div class="about-container">
             <div class="about-image">
                 <img src="ma-photo.jpg" alt="Johann HELLEBOID - Avocat fiscaliste à Versailles">
             </div>
             <div class="about-content">
                 <h2>VOTRE AVOCAT</h2>
-                <p>Fort de <strong>13 années d'expérience</strong> en tant qu'avocat fiscaliste au sein d'entreprises françaises et internationales[cite: 17], Maître Johann HELLEBOID, avocat au Barreau de <strong>Versailles</strong>[cite: 17], intervient avec <strong>rigueur</strong>, <strong>réactivité</strong> et <strong>pragmatisme</strong> pour défendre vos intérêts et vous conseiller en droit fiscal[cite: 17]. Il assiste tant les particuliers que les entreprises <strong>françaises</strong> ou <strong>étrangères</strong> de toute taille[cite: 17] (PME et grandes structures).</p>
-                
-                <p>Qu'il s'agisse de <strong>sécuriser</strong> votre gestion fiscale quotidienne ou de structurer des opérations complexes[cite: 17], le cabinet vous accompagne avec un objectif unique : concevoir des <strong>stratégies d'optimisation fiscale</strong> ancrées dans une stricte <strong>conformité légale</strong>, tout en prévenant et maîtrisant les <strong>risques fiscaux</strong>[cite: 17].</p>
-                
-                <p>Privilégiant la confiance et la proximité à <strong>Versailles</strong> et dans <strong>toute la France</strong>[cite: 17], le cabinet s'engage à offrir une écoute attentive et un accompagnement sur mesure à chaque étape de votre dossier[cite: 17].</p>
+                <p>Fort de <strong>13 années d'expérience</strong> en tant qu'avocat fiscaliste au sein d'entreprises françaises et internationales, Maître Johann HELLEBOID, avocat au Barreau de <strong>Versailles</strong>, intervient avec <strong>rigueur</strong>, <strong>réactivité</strong> et <strong>pragmatisme</strong> pour défendre vos intérêts et vous conseiller en droit fiscal. Il assiste tant les particuliers que les entreprises <strong>françaises</strong> ou <strong>étrangères</strong> de toute taille (PME et grandes structures)[cite: 9].</p>
+                <p>Qu'il s'agisse de <strong>sécuriser</strong> votre gestion fiscale quotidienne ou de structurer des opérations complexes, le cabinet vous accompagne avec un objectif unique : concevoir des <strong>stratégies d'optimisation fiscale</strong> ancrées dans une stricte <strong>conformité légale</strong>, tout en prévenant et maîtrisant les <strong>risques fiscaux</strong>.</p>
+                <p>Privilégiant la confiance et la proximité à <strong>Versailles</strong> et dans <strong>toute la France</strong>, le cabinet s'engage à offrir une écoute attentive et un accompagnement sur mesure à chaque étape de votre dossier.</p>
             </div>
         </div>
-
         <div class="section-cta">
             <a href="contact.html" class="btn-cta">Contactez votre avocat</a>
         </div>
     </section>
 
     <!-- Practice Areas Section -->
-    <section id="expertises" class="expertises">
+    <section id="expertises" class="expertises scroll-fade-in">
         <div class="container">
             <h2>DOMAINES D'EXPERTISES</h2>
             <div class="expertises-grid">
                 
-                <div class="card">
-                    <h3>Fiscalité des Entreprises</h3>
-                    <p>Conseil stratégique en gestion fiscale des sociétés : impôt sur les sociétés, calcul du résultat imposable, intégration fiscale, contrôles fiscaux, fiscalité immobilière, restructurations et taxes locales.</p>
+                <!-- 1. Fiscalité des Entreprises -->
+                <div class="expertise-card scroll-fade-in">
+                    <div class="expertise-header">
+                        <svg class="expertise-icon" viewBox="0 0 24 24"><path d="M3 21h18M5 21V7l8-4v18M19 21V11l-6-4M9 9h1M9 13h1M9 17h1"/></svg>
+                        <h3>Fiscalité des Entreprises</h3>
+                    </div>
+                    <div class="expertise-content">
+                        <p>Conseil stratégique en gestion fiscale des sociétés : impôt sur les sociétés, calcul du résultat imposable, intégration fiscale, contrôles fiscaux, fiscalité immobilière, restructurations et taxes locales.</p>
+                    </div>
                 </div>
 
-                <div class="card">
-                    <h3>TVA</h3>
-                    <p>Opérations nationales et internationales, analyse de taxable, exonérations, régimes de TVA immobilière, sécurisation des déclarations et remboursements de crédits de TVA.</p>
+                <!-- 2. TVA -->
+                <div class="expertise-card scroll-fade-in">
+                    <div class="expertise-header">
+                        <svg class="expertise-icon" viewBox="0 0 24 24"><line x1="19" y1="5" x2="5" y2="19"></line><circle cx="6.5" cy="6.5" r="2.5"></circle><circle cx="17.5" cy="17.5" r="2.5"></circle></svg>
+                        <h3>TVA</h3>
+                    </div>
+                    <div class="expertise-content">
+                        <p>Opérations nationales et internationales, analyse de taxable, exonérations, régimes de TVA immobilière, sécurisation des déclarations et remboursements de crédits de TVA.</p>
+                    </div>
                 </div>
 
-                <div class="card">
-                    <h3>Fiscalité Internationale</h3>
-                    <p>Structuration d'investissements transfrontaliers, retenues à la source, mobilités internationales et analyse des conventions fiscales bilatérales.</p>
+                <!-- 3. Fiscalité Internationale -->
+                <div class="expertise-card scroll-fade-in">
+                    <div class="expertise-header">
+                        <svg class="expertise-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+                        <h3>Fiscalité Internationale</h3>
+                    </div>
+                    <div class="expertise-content">
+                        <p>Structuration d'investissements transfrontaliers, retenues à la source, mobilités internationales et analyse des conventions fiscales bilatérales.</p>
+                    </div>
                 </div>
 
-                <div class="card">
-                    <h3>Fiscalité Environnementale</h3>
-                    <p>Réglementation des taxes assises sur les énergies (TIC), taxe générale sur les activités polluantes (TGAP), contentieux de remboursement et conformité.</p>
+                <!-- 4. Fiscalité Environnementale -->
+                <div class="expertise-card scroll-fade-in">
+                    <div class="expertise-header">
+                        <svg class="expertise-icon" viewBox="0 0 24 24"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.4 19 2c2 2 2.6 3.5 3.7 9.2A7 7 0 0 1 12 22z"></path><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.5 12 16 12 16"></path></svg>
+                        <h3>Fiscalité Environnementale</h3>
+                    </div>
+                    <div class="expertise-content">
+                        <p>Réglementation des taxes assises sur les énergies (TIC), taxe générale sur les activités polluantes (TGAP), contentieux de remboursement et conformité.</p>
+                    </div>
                 </div>
 
-                <div class="card">
-                    <h3>Fiscalité des Personnes et Patrimoine</h3>
-                    <p>Impôt sur le revenu (IR), impôt sur la fortune immobilière (IFI), crypto-actifs, transmission patrimoniale, accompagnement des expatriés et gestion des obligations déclaratives.</p>
+                <!-- 5. Fiscalité des Personnes et Patrimoine -->
+                <div class="expertise-card scroll-fade-in">
+                    <div class="expertise-header">
+                        <svg class="expertise-icon" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                        <h3>Fiscalité des Personnes et Patrimoine</h3>
+                    </div>
+                    <div class="expertise-content">
+                        <p>Impôt sur le revenu (IR), impôt sur la fortune immobilière (IFI), crypto-actifs, transmission patrimoniale, accompagnement des expatriés et gestion des obligations déclaratives.</p>
+                    </div>
                 </div>
 
-                <div class="card">
-                    <h3>Fiscalité des Crypto-actifs et Actifs Numériques</h3>
-                    <p>Accompagnement fiscal des opérations sur cryptomonnaies, NFT et actifs numériques : sécurisation des plus-values de trading, minage, structuration d'investissements et régularisation des avoirs numériques.</p>
+                <!-- 6. Fiscalité des Crypto-actifs -->
+                <div class="expertise-card scroll-fade-in">
+                    <div class="expertise-header">
+                        <svg class="expertise-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><path d="M9.5 9h5a1.5 1.5 0 0 1 0 3h-5a1.5 1.5 0 0 0 0 3h5"></path><line x1="12" y1="6" x2="12" y2="9"></line><line x1="12" y1="15" x2="12" y2="18"></line></svg>
+                        <h3>Fiscalité des Crypto-actifs et Actifs Numériques</h3>
+                    </div>
+                    <div class="expertise-content">
+                        <p>Accompagnement fiscal des opérations sur cryptomonnaies, NFT et actifs numériques : sécurisation des plus-values de trading, minage, structuration d'investissements et régularisation des avoirs numériques.</p>
+                    </div>
                 </div>
 
-                <div class="card">
-                    <h3>Contentieux et Contrôles Fiscaux</h3>
-                    <p>Assistance complète lors de vérifications de comptabilité ou d'examens contradictoires de la situation fiscale personnelle (ESFP), réclamations contentieuses et recours devant les juridictions administratives.</p>
+                <!-- 7. Contentieux et Contrôles Fiscaux -->
+                <div class="expertise-card scroll-fade-in">
+                    <div class="expertise-header">
+                        <svg class="expertise-icon" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                        <h3>Contentieux et Contrôles Fiscaux</h3>
+                    </div>
+                    <div class="expertise-content">
+                        <p>Assistance complète lors de vérifications de comptabilité ou d'examens contradictoires de la situation fiscale personnelle (ESFP), réclamations contentieuses et recours devant les juridictions administratives.</p>
+                    </div>
                 </div>
 
             </div>
@@ -127,7 +178,7 @@
     </section>
 
     <!-- Fees Section -->
-    <section id="honoraires" class="honoraires">
+    <section id="honoraires" class="honoraires scroll-fade-in">
         <div class="container">
             <h2>HONORAIRES</h2>
             <p class="honoraires-intro">
@@ -137,12 +188,12 @@
             <div class="expertises-grid">
                 <div class="card">
                     <h3>Premier Entretien</h3>
-                    <p>Un premier échange téléphonique découverte de <strong>10 minutes</strong> vous est offert[cite: 17].</p>
+                    <p>Un premier échange téléphonique découverte de <strong>10 minutes</strong> vous est offert.</p>
                 </div>
 
                 <div class="card">
                     <h3>Facturation au Temps Passé</h3>
-                    <p>Les interventions sont généralement facturées au taux horaire de <strong>150 € HT / heure</strong> (+ TVA applicable)[cite: 17], selon le temps effectivement passé sur le dossier.</p>
+                    <p>Les interventions sont généralement facturées au taux horaire de <strong>150 € HT / heure</strong> (+ TVA applicable), selon le temps effectivement passé sur le dossier.</p>
                 </div>
 
                 <div class="card">
@@ -179,5 +230,48 @@
         Contactez votre avocat
     </a>
 
+    <!-- Scripts -->
+    <script>
+        // Toggle Burger
+        const burgerBtn = document.getElementById('burgerBtn');
+        const mainNav = document.getElementById('mainNav');
+
+        burgerBtn.addEventListener('click', function() {
+            burgerBtn.classList.toggle('active');
+            mainNav.classList.toggle('active');
+        });
+
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                burgerBtn.classList.remove('active');
+                mainNav.classList.remove('active');
+            });
+        });
+
+        // Accordéon mobile
+        document.querySelectorAll('.expertise-card').forEach(function(card) {
+            var header = card.querySelector('.expertise-header');
+            header.addEventListener('click', function() {
+                if (window.innerWidth <= 992) {
+                    card.classList.toggle('open');
+                }
+            });
+        });
+
+        // Observer pour les animations
+        const observerOptions = { threshold: 0.15 };
+        const observer = new IntersectionObserver(function(entries, observer) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('appear');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.scroll-fade-in').forEach(element => {
+            observer.observe(element);
+        });
+    </script>
 </body>
 </html>

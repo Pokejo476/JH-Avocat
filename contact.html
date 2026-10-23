@@ -4,9 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact | Johann HELLEBOID Avocat - Versailles</title>
-    <link rel="stylesheet" href="style.css?v=2">
+    <link rel="stylesheet" href="style.css?v=8">
     <style>
-        /* Hauteur fixe rigoureusement identique pour le Hero sur toutes les pages */
         .hero.contact-hero {
             position: relative;
             background-image: linear-gradient(rgba(15, 20, 28, 0.75), rgba(15, 20, 28, 0.75)), url('Château Versailles.jpg');
@@ -26,7 +25,6 @@
             width: 100%;
             max-width: 1200px;
         }
-        /* Fond doré identique aux sections alternatives de la page principale */
         .contact-section {
             background-color: var(--alt-bg) !important;
             padding: 60px 50px;
@@ -36,41 +34,54 @@
 </head>
 <body class="page-contact">
 
-    <!-- Barre de navigation -->
+    <!-- Header Navigation (Structure identique à index.html) -->
     <header class="header">
         <div class="nav-container">
+            <!-- 1. Logo à gauche -->
             <div class="logo"><a href="index.html" style="color: white; text-decoration: none;">Johann HELLEBOID Avocat</a></div>
-            <nav>
+            
+            <!-- 2. Rubriques centrées (sans le terme Cabinet) -->
+            <nav id="mainNav">
                 <ul class="nav-links">
-                    <li><a href="index.html#presentation">Cabinet</a></li>
                     <li><a href="index.html#votre-avocat">Votre Avocat</a></li>
                     <li><a href="index.html#expertises">Expertises</a></li>
                     <li><a href="index.html#honoraires">Honoraires</a></li>
                     <li><a href="contact.html" class="active">Contact</a></li>
-                    <li class="lang-switch"><a href="contact.html" class="active">FR</a> | <a href="contact-en.html">EN</a> | <a href="contact-es.html">ES</a></li>
                 </ul>
             </nav>
+
+            <!-- 3. Sélecteur de langue & bouton Burger à droite -->
+            <div class="header-right">
+                <div class="lang-switch-container">
+                    <a href="contact.html" class="active">FR</a> | <a href="contact-en.html">EN</a> | <a href="contact-es.html">ES</a>
+                </div>
+
+                <button class="burger-menu" id="burgerBtn" aria-label="Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
         </div>
     </header>
 
-    <!-- En-tête de la page Contact avec hauteur rigoureusement identique -->
-    <section class="hero contact-hero">
+    <!-- En-tête de la page Contact -->
+    <section class="hero contact-hero scroll-fade-in">
         <div class="presentation-header">
             <h1>CONTACTEZ VOTRE AVOCAT</h1>
             <p class="subtitle">Veuillez remplir le formulaire ci-dessous pour toute demande de conseil ou d'assistance en droit fiscal.</p>
         </div>
     </section>
 
-    <!-- Section Contenu Contact avec fond doré -->
-    <section class="contact-section">
+    <!-- Section Contenu Contact -->
+    <section class="contact-section scroll-fade-in">
         <div class="container contact-grid">
             
-            <!-- Informations du cabinet -->
+            <!-- Coordonnées du cabinet -->
             <div class="card contact-info-card">
                 <h2>Coordonnées du cabinet</h2>
                 <hr class="gold-divider">
                 
-                <!-- Bloc Adresse + Carte côte à côte -->
                 <div class="address-map-block">
                     <div class="address-details">
                         <p><strong>Johann HELLEBOID Avocat</strong></p>
@@ -122,7 +133,9 @@
 
             <!-- Formulaire de contact -->
             <div class="card contact-form-card">
-                <!-- Message de confirmation masqué par défaut -->
+                <h2>Formulaire de contact</h2>
+                <hr class="gold-divider">
+
                 <div id="confirmation-message" style="display: none; padding: 25px; background-color: var(--card-dark-bg); border: 1px solid var(--ochre-accent); border-radius: 4px; text-align: center; margin-bottom: 20px;">
                     <h3 style="color: var(--ochre-accent); font-size: 1.4rem; margin-bottom: 15px;">Merci pour votre message.</h3>
                     <p style="color: var(--light-text); font-size: 1rem; line-height: 1.6;">
@@ -163,7 +176,6 @@
                         <textarea id="message" name="message" rows="5" placeholder="Décrivez succinctement votre situation..." required></textarea>
                     </div>
 
-                    <!-- Champ Honeypot anti-spam invisible -->
                     <input type="text" name="_gotcha" style="display:none">
 
                     <div class="form-group checkbox-group">
@@ -178,11 +190,25 @@
         </div>
     </section>
 
-    <!-- Script JavaScript pour l'affichage du message de confirmation -->
+    <!-- Scripts -->
     <script>
+        const burgerBtn = document.getElementById('burgerBtn');
+        const mainNav = document.getElementById('mainNav');
+
+        burgerBtn.addEventListener('click', function() {
+            burgerBtn.classList.toggle('active');
+            mainNav.classList.toggle('active');
+        });
+
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                burgerBtn.classList.remove('active');
+                mainNav.classList.remove('active');
+            });
+        });
+
         document.getElementById('contactForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            
             var form = this;
             var btn = document.getElementById('submitBtn');
             btn.innerText = 'Envoi en cours...';
@@ -193,9 +219,7 @@
             fetch(form.action, {
                 method: form.method,
                 body: data,
-                headers: {
-                    'Accept': 'application/json'
-                }
+                headers: { 'Accept': 'application/json' }
             }).then(function(response) {
                 if (response.ok) {
                     form.style.display = 'none';
@@ -212,18 +236,31 @@
                     btn.disabled = false;
                 }
             }).catch(function(error) {
-                alert("Erreur de connexion. Si vous testez la page en local sans serveur web, le navigateur peut bloquer l'envoi.");
+                alert("Erreur de connexion.");
                 btn.innerText = 'Envoyer la demande';
                 btn.disabled = false;
             });
         });
+
+        const observerOptions = { threshold: 0.15 };
+        const observer = new IntersectionObserver(function(entries, observer) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('appear');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.scroll-fade-in').forEach(element => {
+            observer.observe(element);
+        });
     </script>
 
-    <!-- Pied de page -->
     <footer class="footer">
         <div class="footer-container">
             <p><strong>Johann HELLEBOID Avocat</strong> - Barreau de Versailles</p>
-            <p>7 Rue des 2 Portes, 78000 Versailles</p>
+            <p>7 Rue des Deux Portes, 78000 Versailles</p>
             <p>Tél : 06 75 17 06 15</p>
             <p>E-mail : helleboidj@tutamail.com</p>
             <p><a href="mentions-legales.html" style="color: #bbb; text-decoration: underline;">Mentions légales & Confidentialité</a></p>
@@ -231,7 +268,6 @@
         </div>
     </footer>
 
-    <!-- Bouton flottant de contact -->
     <a href="contact.html" class="floating-contact-btn">
         Contacter votre avocat
     </a>
