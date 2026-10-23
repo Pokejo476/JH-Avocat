@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact | Johann HELLEBOID Avocat - Versailles</title>
-    <link rel="stylesheet" href="style.css?v=8">
+    <link rel="stylesheet" href="style.css?v=11">
     <style>
+        /* On réutilise exactement le même style de .hero que sur la page principale */
         .hero.contact-hero {
             position: relative;
             background-image: linear-gradient(rgba(15, 20, 28, 0.75), rgba(15, 20, 28, 0.75)), url('Château Versailles.jpg');
@@ -24,6 +25,21 @@
         .hero.contact-hero .presentation-header {
             width: 100%;
             max-width: 1200px;
+            margin: 0 auto;
+        }
+        .hero.contact-hero h1 {
+            font-size: 2.8rem;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+            color: var(--ochre-accent);
+            text-transform: uppercase;
+        }
+        .hero.contact-hero h2 {
+            font-size: 1.2rem;
+            font-weight: normal;
+            margin-bottom: 20px;
+            color: var(--white-text);
+            text-transform: uppercase;
         }
         .contact-section {
             background-color: var(--alt-bg) !important;
@@ -34,13 +50,11 @@
 </head>
 <body class="page-contact">
 
-    <!-- Header Navigation (Structure identique à index.html) -->
+    <!-- Header Navigation -->
     <header class="header">
         <div class="nav-container">
-            <!-- 1. Logo à gauche -->
             <div class="logo"><a href="index.html" style="color: white; text-decoration: none;">Johann HELLEBOID Avocat</a></div>
             
-            <!-- 2. Rubriques centrées (sans le terme Cabinet) -->
             <nav id="mainNav">
                 <ul class="nav-links">
                     <li><a href="index.html#votre-avocat">Votre Avocat</a></li>
@@ -50,7 +64,6 @@
                 </ul>
             </nav>
 
-            <!-- 3. Sélecteur de langue & bouton Burger à droite -->
             <div class="header-right">
                 <div class="lang-switch-container">
                     <a href="contact.html" class="active">FR</a> | <a href="contact-en.html">EN</a> | <a href="contact-es.html">ES</a>
@@ -65,10 +78,11 @@
         </div>
     </header>
 
-    <!-- En-tête de la page Contact -->
+    <!-- En-tête de la page Contact (Strictement équivalent à la page principale) -->
     <section class="hero contact-hero scroll-fade-in">
         <div class="presentation-header">
-            <h1>CONTACTEZ VOTRE AVOCAT</h1>
+            <h1>CONTACT</h1>
+            <h2>AVOCAT EN DROIT FISCAL BARREAU DE VERSAILLES</h2>
             <p class="subtitle">Veuillez remplir le formulaire ci-dessous pour toute demande de conseil ou d'assistance en droit fiscal.</p>
         </div>
     </section>
