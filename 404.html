@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page introuvable | Johann HELLEBOID Avocat</title>
+    <meta name="robots" content="noindex">
+    <meta name="theme-color" content="#0a0d14">
+    <link rel="icon" href="/favicon.ico" sizes="48x48">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <script>document.documentElement.classList.add('js');</script>
+    <link rel="stylesheet" href="/style.css?v=29">
+</head>
+<body>
+    <a class="skip-link" href="/index.html#contenu">Aller au contenu</a>
+
+
+    <!-- Header Navigation avec Menu Burger -->
+<header class="header">
+    <div class="topbar">
+        <div class="topbar-inner">
+            <a href="/contact.html#formulaire" title="Écrire au cabinet via le formulaire de contact"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="M3 7l9 6 9-6"></path></svg><span>helleboidj@tutamail.com</span></a>
+            <a href="tel:+33675170615" class="topbar-phone" title="Appeler le cabinet"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"></path></svg><span>06 75 17 06 15</span></a>
+        </div>
+    </div>
+    <div class="nav-container">
+        <!-- 1. Logo à gauche -->
+        <div class="logo">
+    <a href="/">
+        <img src="/logo.png" alt="Johann HELLEBOID Avocat" class="logo-img" width="800" height="224">
+    </a>
+</div>
+
+        <!-- 2. Rubriques centrées -->
+        <nav id="mainNav" aria-label="Navigation principale">
+            <ul class="nav-links">
+                <li><a href="/index.html#votre-avocat">Votre Avocat</a></li>
+                <li><a href="/index.html#expertises">Expertises</a></li>
+                <li><a href="/index.html#honoraires">Honoraires</a></li>
+                <li><a href="/contact.html">Contact</a></li>
+            </ul>
+        </nav>
+
+        <!-- 3. Sélecteur de langues (et burger mobile) à droite -->
+        <div class="header-right">
+            <div class="lang-switch-container" role="group" aria-label="Langue du site">
+                <a href="/" class="active" lang="fr" hreflang="fr" title="Français" aria-current="true">FR</a> | <a href="/index-en.html" lang="en" hreflang="en" title="English">EN</a> | <a href="/index-es.html" lang="es" hreflang="es" title="Español">ES</a>
+            </div>
+            <button class="burger-menu" id="burgerBtn" type="button" aria-label="Menu" aria-expanded="false" aria-controls="mainNav">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </div>
+</header>
+
+    <main id="contenu" tabindex="-1">
+
+    <section class="hero hero-home">
+        <div class="presentation-header">
+            <p class="hero-kicker">Erreur 404</p>
+            <h1>Cette page est introuvable</h1>
+            <p class="subtitle">L'adresse saisie n'existe pas ou la page a été déplacée.</p>
+            <div class="hero-actions">
+                <a href="/" class="btn-cta">Retour à l'accueil</a>
+                <a href="/contact.html" class="btn-ghost">Contacter le cabinet</a>
+            </div>
+        </div>
+    </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <p><strong>Johann HELLEBOID Avocat</strong> - Barreau de Versailles</p>
+            <p>7 Rue des Deux Portes, 78000 Versailles, France</p>
+            <p>Tél : 06 75 17 06 15</p>
+            <p>Email : helleboidj@tutamail.com</p>
+            <p><a href="/mentions-legales.html" style="color: #bbb; text-decoration: underline;">Mentions légales & Politique de confidentialité</a></p>
+            <p class="copyright">&copy; 2026 Johann HELLEBOID. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script>
+        var burgerBtn = document.getElementById('burgerBtn');
+        var mainNav = document.getElementById('mainNav');
+        burgerBtn.addEventListener('click', function () {
+            var open = burgerBtn.classList.toggle('active');
+            mainNav.classList.toggle('active', open);
+            burgerBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+        });
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape' && burgerBtn.classList.contains('active')) {
+                burgerBtn.classList.remove('active');
+                mainNav.classList.remove('active');
+                burgerBtn.setAttribute('aria-expanded', 'false');
+                burgerBtn.focus();
+            }
+        });
+        var siteHeader = document.querySelector('.header');
+        function updateHeaderSize() { siteHeader.classList.toggle('scrolled', window.scrollY > 30); }
+        window.addEventListener('scroll', updateHeaderSize, { passive: true });
+        updateHeaderSize();
+    </script>
+</body>
+</html>

@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.VOTRE-DOMAINE.fr/sitemap.xml
+Sitemap: https://www.jhelleboid-avocat.fr/sitemap.xml
