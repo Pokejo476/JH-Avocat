@@ -1,11 +1,49 @@
 /* ==========================================
+   0. POLICES AUTO-HÉBERGÉES (dossier /fonts, aucun appel à Google)
+   Titres : Lora  |  Texte : Work Sans  (licence SIL OFL 1.1)
+   ========================================== */
+@font-face {
+    font-family: 'Lora';
+    src: url('fonts/Lora-Variable.woff') format('woff');
+    font-weight: 400 700;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Work Sans';
+    src: url('fonts/WorkSans-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Work Sans';
+    src: url('fonts/WorkSans-Bold.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Work Sans';
+    src: url('fonts/WorkSans-Italic.woff') format('woff');
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* ==========================================
    1. VARIABLES & REINITIALISATION GENERALE
    ========================================== */
 :root {
+    --font-title: 'Lora', Georgia, 'Times New Roman', serif;
+    --font-body: 'Work Sans', 'Segoe UI', system-ui, -apple-system, Arial, sans-serif;
+    --cream-card: #fffdf8;
+    --ochre-text: #8a5a1f;
+    --border-cream: #e6dcc8;
     --ochre-accent: #cc9352;
     --ochre-dark: #633f17;
     --dark-bg: #0f141c;
-    --alt-bg: #cc9352;
+    --alt-bg: #f6f1e8; /* fond crème (ancien ocre : #cc9352) */
     --card-dark-bg: #1a2332;
     --card-light-bg: #e0b077;
     --dark-text: #170d03;
@@ -19,15 +57,15 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: 'Helvetica Neue', Arial, sans-serif;
 }
 
 html {
     scroll-behavior: smooth;
-    scroll-padding-top: 31px;
+    scroll-padding-top: 78px; /* = hauteur de l'en-tête une fois réduit (PC), pour que les ancres ne passent pas dessous */
 }
 
 body {
+    font-family: var(--font-body);
     background-color: var(--dark-bg);
     color: var(--light-text);
     line-height: 1.6;
@@ -39,7 +77,17 @@ body {
 #votre-avocat,
 #expertises,
 #honoraires {
-    scroll-margin-top: 31px;
+    scroll-margin-top: 0;
+}
+
+button, input, textarea, select {
+    font-family: inherit;
+}
+
+h1, h2, h3, h4 {
+    font-family: var(--font-title);
+    font-weight: 600;
+    line-height: 1.25;
 }
 
 /* ==========================================
@@ -51,23 +99,13 @@ body {
 .header {
     background-color: #0a0d14;
     color: var(--white-text);
-    padding: 15px 40px;
+    padding: 25px 40px; /* Padding vertical augmenté pour doupler/élargir la hauteur du header */
     position: sticky;
     top: 0;
     z-index: 1000;
     border-bottom: 2px solid var(--ochre-accent);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
     width: 100%;
-/* Application d'un format standardisé pour le header sur toutes les pages */
-header, .site-header, .header-container {
-    height: 85px; /* Ajustez cette valeur selon la hauteur souhaitée */
-    min-height: 85px;
-    padding-top: 0;
-    padding-bottom: 0;
-    display: flex;
-    align-items: center;
-    box-sizing: border-box;
-}
 }
 
 .nav-container {
@@ -79,17 +117,44 @@ header, .site-header, .header-container {
     width: 100%;
 }
 
+/* Style du conteneur du logo */
 .logo {
-    font-size: 1.15rem;
-    font-weight: bold;
-    letter-spacing: 1px;
-    flex: 1; /* Permet d'équilibrer l'espace à gauche */
+    display: flex;
+    align-items: center;
+    flex: 1;
     text-align: left;
 }
 
 .logo a {
-    color: var(--white-text);
+    display: flex;
+    align-items: center;
     text-decoration: none;
+}
+
+/* Logo agrandi pour une visibilité optimale */
+.logo-img {
+    height: 100px; /* Hauteur du logo sur PC : augmentez/diminuez cette valeur pour l'ajuster */
+    width: auto;
+    object-fit: contain;
+    transition: opacity 0.2s ease;
+}
+
+.logo-img:hover {
+    opacity: 0.9;
+}
+
+/* Petits écrans PC : logo un peu plus compact pour que le menu reste sur une ligne */
+@media screen and (min-width: 993px) and (max-width: 1150px) {
+    .logo-img {
+        height: 78px;
+    }
+}
+
+/* Adaptation mobile */
+@media screen and (max-width: 992px) {
+    .logo-img {
+        height: 62px; /* Hauteur du logo sur smartphone */
+    }
 }
 
 /* Centre la navigation principale */
@@ -205,10 +270,25 @@ nav {
 }
 
 .hero {
+    position: relative;
     background-color: var(--dark-bg);
-    padding: 100px 50px 60px;
+    background-image: linear-gradient(rgba(15, 20, 28, 0.75), rgba(15, 20, 28, 0.75)), url('chateau-versailles.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 290px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     text-align: center;
+    padding: 0 50px;
     border-bottom: 1px solid var(--border-dark);
+}
+
+.presentation-header {
+    width: 100%;
+    max-width: 1200px;
 }
 
 .presentation-header h1 {
@@ -231,47 +311,110 @@ nav {
 }
 
 .about {
-    padding: 30px 50px 80px;
+    padding: 90px 50px;
     background-color: var(--alt-bg);
     color: var(--dark-text);
-    border-bottom: 1px solid var(--border-light);
-    text-align: center;
+    border-bottom: 1px solid var(--border-cream);
 }
 
 .about-container {
-    max-width: 1000px;
+    max-width: 1100px;
     margin: 0 auto;
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 380px 1fr;
+    gap: 80px;
     align-items: center;
-    gap: 30px;
+}
+
+.about-image {
+    position: relative;
+}
+
+/* Cadre ocre décalé derrière la photo */
+.about-image::before {
+    content: '';
+    position: absolute;
+    top: 20px;
+    left: -20px;
+    right: 20px;
+    bottom: -20px;
+    border: 2px solid var(--ochre-accent);
+    border-radius: 16px;
+    z-index: 0;
 }
 
 .about-image img {
-    width: 280px;
-    height: 280px;
+    position: relative;
+    z-index: 1;
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 5;
     object-fit: cover;
-    object-position: 50% 30%;
-    border-radius: 50%;
-    border: 3px solid #ffffff;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    object-position: 50% 25%;
+    border-radius: 16px;
+    box-shadow: 0 20px 45px rgba(23, 13, 3, 0.2);
 }
 
 .about-content {
-    max-width: 750px;
-    text-align: center;
+    text-align: left;
+}
+
+.about-kicker {
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--ochre-text);
+    margin-bottom: 12px;
 }
 
 .about-content h2 {
-    font-size: 1.8rem;
-    margin-bottom: 20px;
+    font-size: 2.4rem;
+    margin-bottom: 24px;
     color: var(--dark-text);
 }
 
+.about-content h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: var(--ochre-accent);
+    margin-top: 16px;
+}
+
 .about-content p {
-    margin-bottom: 15px;
+    margin-bottom: 16px;
     color: var(--dark-text);
     font-size: 1.05rem;
+}
+
+/* Chiffres clés */
+.about-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin: 32px 0 34px;
+    padding-top: 26px;
+    border-top: 1px solid rgba(138, 90, 31, 0.3);
+}
+
+.stat-value {
+    display: block;
+    font-family: var(--font-title);
+    font-size: 2rem;
+    font-weight: 600;
+    line-height: 1.1;
+    color: var(--ochre-text);
+}
+
+.stat-label {
+    display: block;
+    margin-top: 6px;
+    font-size: 0.88rem;
+    line-height: 1.4;
+    color: #4a3a28;
 }
 
 .about .btn-cta {
@@ -287,15 +430,15 @@ nav {
 
 .expertises {
     background-color: var(--dark-bg);
-    padding: 30px 50px 60px;
+    padding: 90px 50px;
     border-bottom: 1px solid var(--border-dark);
 }
 
 .honoraires {
     background-color: var(--alt-bg);
     color: var(--dark-text);
-    padding: 30px 50px 60px;
-    border-bottom: 1px solid var(--border-light);
+    padding: 90px 50px;
+    border-bottom: 1px solid var(--border-cream);
 }
 
 .container {
@@ -389,11 +532,11 @@ nav {
 }
 
 .honoraires-info {
-    background-color: var(--card-light-bg);
+    background-color: var(--cream-card);
     padding: 25px;
-    margin-top: 30px;
-    border: 1px solid var(--border-light);
-    border-left: 4px solid var(--ochre-dark);
+    margin-top: 40px;
+    border: 1px solid var(--border-cream);
+    border-left: 4px solid var(--ochre-accent);
     border-radius: 12px !important;
     color: var(--dark-text);
 }
@@ -592,7 +735,7 @@ nav {
 
     /* Décalage d'affichage (scroll offset) spécifique aux mobiles */
     html {
-        scroll-padding-top: 0px !important;
+        scroll-padding-top: 0px !important; /* en-tête non collant sur mobile : aucun décalage nécessaire */
     }
 
     #presentation,
@@ -776,5 +919,723 @@ nav {
         padding: 0 20px 20px 20px !important;
         border-top: 1px solid var(--border-dark) !important;
         padding-top: 15px !important;
+    }
+}  /* ← accolade manquante dans l'original : fermeture du bloc mobile (max-width: 992px) */
+
+/* ==========================================
+   STYLE DU LOGO HTML/CSS (Zéro démarque)
+   ========================================== */
+.logo-brand {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    text-decoration: none;
+}
+
+.logo-monogram {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.logo-text {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.logo-name {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 1.1rem;
+    font-weight: bold;
+    letter-spacing: 1.2px;
+    color: var(--ochre-accent);
+    white-space: nowrap;
+}
+
+.logo-title {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 0.8rem;
+    font-weight: normal;
+    color: var(--light-text);
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+}
+
+/* Adaptation mobile */
+@media screen and (max-width: 992px) {
+    .logo {
+        justify-content: center !important;
+        text-align: center !important;
+    }
+    .logo-brand {
+        justify-content: center !important;
+    }
+    .logo-text {
+        text-align: center;
+    }
+    .logo-name {
+        font-size: 0.95rem;
+    }
+    .logo-title {
+        font-size: 0.72rem;
+    }
+}
+
+
+/* ==========================================
+   6. ANIMATIONS D'APPARITION AU DÉFILEMENT
+   (la classe "js" est ajoutée par le script en haut de chaque page :
+   sans JavaScript, tout le contenu reste visible)
+   ========================================== */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(22px); }
+    to   { opacity: 1; transform: none; }
+}
+
+.js .scroll-fade-in {
+    opacity: 0;
+}
+
+/* Grandes sections : simple fondu (pas de glissement, pour ne pas décaler les liens d'ancre du menu) */
+.js .scroll-fade-in.appear {
+    opacity: 1;
+    animation: fadeIn 0.8s ease-out backwards;
+}
+
+/* Cartes : fondu + léger glissement vers le haut */
+.js .expertise-card.scroll-fade-in.appear {
+    animation-name: fadeInUp;
+}
+
+/* Les cartes d'expertise apparaissent en cascade sur PC */
+@media screen and (min-width: 993px) {
+    .js .expertises-grid .expertise-card:nth-child(3n+2).appear { animation-delay: 0.12s; }
+    .js .expertises-grid .expertise-card:nth-child(3n+3).appear { animation-delay: 0.24s; }
+}
+
+/* Respect du réglage "réduire les animations" du système */
+@media (prefers-reduced-motion: reduce) {
+    .js .scroll-fade-in,
+    .js .scroll-fade-in.appear {
+        opacity: 1;
+        animation: none;
+    }
+}
+
+
+/* ==========================================
+   7. CARTE GOOGLE MAPS (chargée après clic)
+   ========================================== */
+.address-map {
+    margin: 5px 0 22px;
+}
+
+.address-map iframe {
+    display: block;
+    border-radius: 8px;
+}
+
+.map-consent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    min-height: 170px;
+    padding: 20px;
+    text-align: center;
+    background-color: var(--dark-bg);
+    border: 1px dashed var(--border-dark);
+    border-radius: 8px;
+}
+
+.contact-info-card .map-consent p {
+    margin: 0 !important;
+    font-size: 0.85rem !important;
+    color: #a0aec0 !important;
+}
+
+.contact-info-card .map-consent p strong {
+    color: var(--light-text) !important;
+    font-size: 0.95rem !important;
+}
+
+.map-consent .btn-cta {
+    padding: 10px 22px;
+    font-size: 0.9rem;
+    border-radius: 8px;
+}
+
+.contact-info-card .map-consent a {
+    font-size: 0.85rem;
+}
+
+
+/* ==========================================
+   8. PAGE MENTIONS LÉGALES
+   ========================================== */
+.legal-section {
+    padding: 60px 50px;
+    background-color: var(--dark-bg);
+}
+
+.legal-card {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px;
+    background-color: var(--card-dark-bg);
+    border: 1px solid var(--border-dark);
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    color: var(--light-text);
+    line-height: 1.8;
+}
+
+.legal-card h3 {
+    color: var(--ochre-accent);
+    margin: 30px 0 10px;
+}
+
+.legal-card h3:first-child {
+    margin-top: 0;
+}
+
+.legal-card p {
+    margin-bottom: 6px;
+}
+
+.legal-card a {
+    color: var(--ochre-accent);
+}
+
+@media screen and (max-width: 992px) {
+    .legal-section {
+        padding: 35px 15px;
+    }
+    .legal-card {
+        padding: 25px 20px;
+    }
+}
+
+
+/* ==========================================
+   9. REFONTE VISUELLE (typographie, accueil, expertises, honoraires)
+   ========================================== */
+
+/* --- Bandeaux de page (Contact, Mentions légales) : sous-titre en police du texte --- */
+.presentation-header h2 {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    font-weight: 400;
+    letter-spacing: 2.5px;
+}
+
+/* --- Boutons --- */
+.btn-cta {
+    font-family: var(--font-body);
+}
+
+.btn-ghost {
+    display: inline-block;
+    padding: 14px 28px;
+    border: 2px solid rgba(255, 255, 255, 0.75);
+    border-radius: 8px;
+    color: var(--white-text);
+    font-weight: bold;
+    font-size: 0.95rem;
+    letter-spacing: 1px;
+    text-decoration: none;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.btn-ghost:hover {
+    background-color: var(--white-text);
+    border-color: var(--white-text);
+    color: var(--dark-bg);
+}
+
+/* --- Bandeau d'accueil (plus haut, avec accroche) --- */
+.hero-home {
+    height: auto;
+    min-height: 540px;
+    padding: 90px 50px;
+    background-image: linear-gradient(180deg, rgba(10, 13, 20, 0.6), rgba(10, 13, 20, 0.8)), url('chateau-versailles.jpg');
+}
+
+.hero-kicker {
+    margin-bottom: 24px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--ochre-accent);
+}
+
+.hero-home .presentation-header h1 {
+    max-width: 900px;
+    margin: 0 auto 24px;
+    font-size: clamp(2rem, 4.2vw, 3.4rem);
+    font-weight: 600;
+    line-height: 1.15;
+    letter-spacing: 0;
+    color: var(--white-text);
+}
+
+.hero-home .subtitle {
+    max-width: 720px;
+    margin: 0 auto 40px;
+    font-size: 1.2rem;
+    color: var(--light-text);
+}
+
+.hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+}
+
+/* --- Titres de section --- */
+.expertises h2,
+.honoraires h2 {
+    font-size: 2.4rem;
+    margin-bottom: 50px;
+}
+
+.expertises h2::after,
+.honoraires h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: var(--ochre-accent);
+    margin: 16px auto 0;
+}
+
+.honoraires-intro {
+    max-width: 760px;
+    margin: -20px auto 45px;
+    font-size: 1.05rem;
+}
+
+/* --- Cartes d'expertise : icône au-dessus du titre (PC) --- */
+@media screen and (min-width: 993px) {
+    .expertises .expertise-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+    }
+
+    .expertise-icon {
+        width: 38px;
+        height: 38px;
+    }
+}
+
+/* 6 cartes : 3 + 3 sur PC */
+@media screen and (min-width: 993px) {
+    .expertises .expertises-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* --- Honoraires : cartes claires + carte vedette pour le tarif horaire --- */
+.honoraires .expertises-grid {
+    align-items: stretch;
+}
+
+.honoraires .card {
+    background-color: var(--cream-card);
+    border: 1px solid var(--border-cream);
+    box-shadow: 0 8px 28px rgba(23, 13, 3, 0.07);
+}
+
+.honoraires .card h3 {
+    color: var(--ochre-text);
+}
+
+.honoraires .card p {
+    color: var(--dark-text);
+}
+
+.honoraires .card.card-featured {
+    background-color: var(--dark-bg);
+    border: 2px solid var(--ochre-accent);
+    box-shadow: 0 18px 45px rgba(15, 20, 28, 0.35);
+    text-align: center;
+    transform: translateY(-10px);
+}
+
+.honoraires .card.card-featured h3 {
+    color: var(--ochre-accent);
+}
+
+.honoraires .card.card-featured p {
+    color: var(--light-text);
+}
+
+.price {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 6px 12px;
+    margin: 4px 0 18px;
+}
+
+.honoraires .card.card-featured .price-amount {
+    font-family: var(--font-title);
+    font-size: 3.6rem;
+    font-weight: 600;
+    line-height: 1;
+    color: var(--ochre-accent);
+}
+
+.honoraires .card.card-featured .price-unit {
+    font-size: 0.95rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--light-text);
+}
+
+/* --- En-tête fixe qui se réduit au défilement (PC uniquement) --- */
+@media screen and (min-width: 993px) {
+    .header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        transition: padding 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .header .logo-img {
+        transition: height 0.3s ease, opacity 0.2s ease;
+    }
+
+    /* l'en-tête étant fixe, on réserve sa place en haut de page */
+    body {
+        padding-top: 152px;
+    }
+
+    .header.scrolled {
+        padding: 10px 40px;
+    }
+
+    .header.scrolled .logo-img {
+        height: 56px;
+    }
+}
+
+@media screen and (min-width: 993px) and (max-width: 1150px) {
+    body {
+        padding-top: 130px;
+    }
+}
+
+/* --- Adaptation mobile de la refonte --- */
+@media screen and (max-width: 992px) {
+    .hero.hero-home {
+        padding: 55px 20px 50px !important;
+    }
+
+    .hero.hero-home h1 {
+        font-size: 1.85rem !important;
+        line-height: 1.2 !important;
+    }
+
+    .hero-home .subtitle {
+        font-size: 1.05rem;
+        margin-bottom: 30px;
+    }
+
+    .hero-kicker {
+        font-size: 0.75rem;
+        letter-spacing: 2px;
+        margin-bottom: 18px;
+    }
+
+    .hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+        max-width: 320px;
+        margin: 0 auto;
+    }
+
+    .about,
+    .expertises,
+    .honoraires {
+        padding: 55px 20px;
+    }
+
+    .about-container {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+
+    .about-image {
+        width: 100%;
+        max-width: 320px;
+        margin: 0 auto;
+    }
+
+    .about-image::before {
+        top: 14px;
+        left: -12px;
+        right: 12px;
+        bottom: -14px;
+    }
+
+    .about-content h2,
+    .expertises h2,
+    .honoraires h2 {
+        font-size: 2rem;
+    }
+
+    .expertises h2,
+    .honoraires h2 {
+        margin-bottom: 35px;
+    }
+
+    .honoraires-intro {
+        margin-top: -10px;
+        margin-bottom: 35px;
+    }
+
+    .about-stats {
+        gap: 12px;
+    }
+
+    .stat-value {
+        font-size: 1.5rem;
+    }
+
+    .stat-label {
+        font-size: 0.78rem;
+    }
+
+    .honoraires .card.card-featured {
+        transform: none;
+    }
+
+    .honoraires .expertises-grid .card {
+        margin-bottom: 0;
+    }
+}
+
+
+/* ==========================================
+   10. ACCESSIBILITÉ
+   ========================================== */
+
+/* Lien « Aller au contenu » : invisible, il apparaît quand on navigue au clavier (touche Tab) */
+.skip-link {
+    position: fixed;
+    top: -120px;
+    left: 12px;
+    z-index: 3000;
+    padding: 12px 22px;
+    background-color: var(--ochre-accent);
+    color: var(--dark-bg);
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: 0 0 10px 10px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.45);
+}
+
+.skip-link:focus {
+    top: 0;
+}
+
+main:focus {
+    outline: none;
+}
+
+/* Contour bien visible au clavier (ocre sur fond sombre, bleu nuit sur fond crème) */
+:focus-visible {
+    outline: 3px solid var(--focus-color, var(--ochre-accent));
+    outline-offset: 3px;
+}
+
+.about,
+.honoraires,
+.contact-section {
+    --focus-color: #0f141c;
+}
+
+.contact-info-card,
+.contact-form-card {
+    --focus-color: var(--ochre-accent);
+}
+
+.form-group input:focus-visible,
+.form-group textarea:focus-visible {
+    outline: 3px solid var(--ochre-accent);
+    outline-offset: 2px;
+}
+
+/* Double contour (blanc + bleu nuit) : visible sur fond clair comme sur fond sombre */
+.floating-contact-btn:focus-visible {
+    outline: 3px solid #ffffff;
+    outline-offset: 0;
+    box-shadow: 0 0 0 6px #0f141c, 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+/* En-têtes de cartes (accordéon mobile) : contour à l'intérieur pour ne pas être rogné */
+.expertise-header:focus-visible {
+    outline-offset: -3px;
+}
+
+/* Réglage « réduire les animations » du système : plus de défilement animé ni de transitions */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    .expertise-card:hover {
+        transform: none;
+    }
+}
+
+
+/* ==========================================
+   11. QUESTIONS FRÉQUENTES
+   ========================================== */
+.faq {
+    background-color: var(--dark-bg);
+    padding: 30px 50px 80px;
+    border-top: 1px solid var(--border-dark);
+}
+
+.faq .container {
+    max-width: 860px;
+    margin: 0 auto;
+}
+
+.faq h2 {
+    margin: 30px 0 22px;
+    text-align: center;
+    font-size: 2.4rem;
+    color: var(--ochre-accent);
+}
+
+.faq h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: var(--ochre-accent);
+    margin: 16px auto 0;
+}
+
+.faq-intro {
+    max-width: 680px;
+    margin: 0 auto 40px;
+    text-align: center;
+    color: #c5cfdb;
+}
+
+.faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.faq-item {
+    background-color: var(--card-dark-bg);
+    border: 1px solid var(--border-dark);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: border-color 0.3s ease;
+}
+
+.faq-item[open] {
+    border-color: var(--ochre-accent);
+}
+
+.faq-item summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 20px 24px;
+    list-style: none;
+    cursor: pointer;
+    font-family: var(--font-title);
+    font-weight: 600;
+    font-size: 1.1rem;
+    line-height: 1.4;
+    color: var(--white-text);
+    transition: color 0.2s ease;
+}
+
+.faq-item summary::-webkit-details-marker {
+    display: none;
+}
+
+.faq-item summary::after {
+    content: '+';
+    flex-shrink: 0;
+    font-family: var(--font-body);
+    font-size: 1.7rem;
+    line-height: 1;
+    color: var(--ochre-accent);
+    transition: transform 0.3s ease;
+}
+
+.faq-item[open] summary::after {
+    transform: rotate(45deg);
+}
+
+.faq-item summary:hover {
+    color: var(--ochre-accent);
+}
+
+.faq-item summary:focus-visible {
+    outline-offset: -3px;
+}
+
+.faq-answer {
+    padding: 0 24px 24px;
+}
+
+.faq-answer p {
+    color: var(--light-text);
+    line-height: 1.75;
+}
+
+@media screen and (max-width: 992px) {
+    .faq {
+        padding: 55px 20px;
+    }
+
+    .faq h2 {
+        margin-top: 0;
+        font-size: 2rem;
+    }
+
+    .faq-item summary {
+        padding: 16px 18px;
+        font-size: 1.02rem;
+    }
+
+    .faq-answer {
+        padding: 0 18px 20px;
     }
 }

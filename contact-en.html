@@ -4,96 +4,118 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact | Johann HELLEBOID Tax Lawyer - Versailles</title>
-    <link rel="stylesheet" href="style.css?v=2">
+    <meta name="description" content="Contact Johann Helleboid, tax lawyer in Versailles: contact form, phone, email, firm address and access (RER, bus, parking).">
+    <link rel="canonical" href="https://www.VOTRE-DOMAINE.fr/contact-en.html">
+    <meta name="theme-color" content="#0a0d14">
+    <link rel="icon" href="favicon.ico" sizes="48x48">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel="alternate" hreflang="fr" href="https://www.VOTRE-DOMAINE.fr/contact.html">
+    <link rel="alternate" hreflang="en" href="https://www.VOTRE-DOMAINE.fr/contact-en.html">
+    <link rel="alternate" hreflang="es" href="https://www.VOTRE-DOMAINE.fr/contact-es.html">
+    <link rel="alternate" hreflang="x-default" href="https://www.VOTRE-DOMAINE.fr/contact.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Johann HELLEBOID Avocat">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:title" content="Contact | Johann HELLEBOID Tax Lawyer - Versailles">
+    <meta property="og:description" content="Contact Johann Helleboid, tax lawyer in Versailles: contact form, phone, email, firm address and access (RER, bus, parking).">
+    <meta property="og:url" content="https://www.VOTRE-DOMAINE.fr/contact-en.html">
+    <meta property="og:image" content="https://www.VOTRE-DOMAINE.fr/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Johann HELLEBOID, tax lawyer in Versailles">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="preload" href="fonts/Lora-Variable.woff" as="font" type="font/woff" crossorigin>
+    <link rel="preload" href="fonts/WorkSans-Regular.woff" as="font" type="font/woff" crossorigin>
+    <link rel="preload" href="chateau-versailles.jpg" as="image">
+    <script>document.documentElement.classList.add('js');</script>
+    <link rel="stylesheet" href="style.css?v=17">
     <style>
-        .hero.contact-hero {
-            position: relative;
-            background-image: linear-gradient(rgba(15, 20, 28, 0.75), rgba(15, 20, 28, 0.75)), url('Château Versailles.jpg');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            height: 290px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 0 50px;
-            border-bottom: 1px solid var(--border-dark);
-        }
-        .hero.contact-hero .presentation-header {
-            width: 100%;
-            max-width: 1200px;
-        }
-        .contact-section {
-            background-color: var(--alt-bg) !important;
-            padding: 60px 50px;
-            border-bottom: 1px solid var(--border-light);
-        }
-    </style>
+    .contact-section {
+        background-color: var(--alt-bg) !important;
+        padding: 60px 50px;
+        border-bottom: 1px solid var(--border-cream);
+    }
+</style>
 </head>
 <body class="page-contact">
+    <a class="skip-link" href="#contenu">Skip to content</a>
+
 
     <!-- Header Navigation -->
     <header class="header">
-        <div class="nav-container">
-            <div class="logo"><a href="index-en.html" style="color: white; text-decoration: none;">Johann HELLEBOID Tax Lawyer</a></div>
-            <nav>
-                <ul class="nav-links">
-                    <li><a href="index-en.html#presentation">About</a></li>
-                    <li><a href="index-en.html#votre-avocat">Your Lawyer</a></li>
-                    <li><a href="index-en.html#expertises">Practice Areas</a></li>
-                    <li><a href="index-en.html#honoraires">Fees</a></li>
-                    <li><a href="contact-en.html" class="active">Contact</a></li>
-                    <li class="lang-switch"><a href="contact.html">FR</a> | <a href="contact-en.html" class="active">EN</a> | <a href="contact-es.html">ES</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+    <div class="nav-container">
+        <div class="logo">
+    <a href="index-en.html">
+        <img src="logo.png" alt="Johann HELLEBOID Tax Lawyer" class="logo-img" width="800" height="224">
+    </a>
+</div>
+        
+        <nav id="mainNav" aria-label="Main navigation">
+            <ul class="nav-links">
+                <li><a href="index-en.html#votre-avocat">Your Lawyer</a></li>
+                <li><a href="index-en.html#expertises">Practice Areas</a></li>
+                <li><a href="index-en.html#honoraires">Fees</a></li>
+                <li><a href="contact-en.html" class="active" aria-current="page">Contact</a></li>
+            </ul>
+        </nav>
 
-    <!-- Contact Hero Section -->
-    <section class="hero contact-hero">
-        <div class="presentation-header">
-            <h1>CONTACT YOUR LAWYER</h1>
-            <p class="subtitle">Please complete the form below for any legal advice or assistance regarding French tax law.</p>
-        </div>
-    </section>
+        <div class="header-right">
+            <div class="lang-switch-container" role="group" aria-label="Site language">
+                <a href="contact.html" lang="fr" hreflang="fr" title="Français">FR</a> | <a href="contact-en.html" class="active" lang="en" hreflang="en" title="English" aria-current="true">EN</a> | <a href="contact-es.html" lang="es" hreflang="es" title="Español">ES</a>
+            </div>
 
-    <!-- Contact Content Section -->
-    <section class="contact-section">
+            <button class="burger-menu" id="burgerBtn" type="button" aria-label="Menu" aria-expanded="false" aria-controls="mainNav">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </div>
+</header>
+
+    <main id="contenu" tabindex="-1">
+
+    <!-- En-tête de la page Contact (Strictement équivalent à la page principale) -->
+    <section class="hero scroll-fade-in">
+    <div class="presentation-header">
+        <h1>CONTACT YOUR LAWYER</h1>
+        <h2>TAX LAWYER - VERSAILLES BAR</h2>
+        <p class="subtitle">Please complete the form below for any request for advice or assistance regarding French tax law.</p>
+    </div>
+</section>
+
+    <!-- Section Contenu Contact -->
+    <section class="contact-section scroll-fade-in">
         <div class="container contact-grid">
             
-            <!-- Firm Information -->
+            <!-- Coordonnées du cabinet -->
             <div class="card contact-info-card">
-                <h2>Firm Details</h2>
+                <h2>Firm details</h2>
                 <hr class="gold-divider">
                 
-                <!-- Side-by-side Address + Map Block -->
                 <div class="address-map-block">
                     <div class="address-details">
                         <p><strong>Johann HELLEBOID Tax Lawyer</strong></p>
-                        <p>7 Rue des 2 Portes, 78000 Versailles, France</p>
+                        <p>7 Rue des Deux Portes, 78000 Versailles, France</p>
                         <p><strong>Phone:</strong> <a href="tel:+33675170615">+33 6 75 17 06 15</a></p>
                         <p><strong>Email:</strong> <a href="mailto:helleboidj@tutamail.com">helleboidj@tutamail.com</a></p>
                     </div>
                     
                     <div class="address-map">
-                        <iframe 
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2628.742337628867!2d2.1287913!3d48.8058728!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e67db053f3e951%3A0x6b77ad0a0fb0e3b9!2s7%20Rue%20des%202%20Portes%2C%2078000%20Versailles!5e0!3m2!1sen!2sfr!4v1700000000000!5m2!1sen!2sfr" 
-                            width="100%" 
-                            height="150" 
-                            style="border:0;" 
-                            allowfullscreen="" 
-                            loading="lazy" 
-                            referrerpolicy="no-referrer-when-downgrade">
-                        </iframe>
+                        <div class="map-consent" id="mapConsent" data-src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2628.742337628867!2d2.1287913!3d48.8058728!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e67db053f3e951%3A0x6b77ad0a0fb0e3b9!2s7%20Rue%20des%202%20Portes%2C%2078000%20Versailles!5e0!3m2!1sen!2sfr!4v1700000000000!5m2!1sen!2sfr">
+                            <p><strong>Google Maps</strong></p>
+                            <p>Displaying the map uses a Google service, which may set cookies. It is only loaded with your consent.</p>
+                            <button type="button" class="btn-cta" id="loadMapBtn">Show map</button>
+                            <a href="https://www.google.com/maps/search/?api=1&amp;query=7+Rue+des+2+Portes,+78000+Versailles" target="_blank" rel="noopener noreferrer">Open in Google Maps ↗</a>
+                        </div>
                     </div>
                 </div>
 
-                <h3>Opening Hours</h3>
-                <p>Monday to Sunday from 8:00 AM to 8:00 PM<br><em>By appointment only</em></p>
+                <h3>Opening hours</h3>
+                <p>Monday to Sunday, 8:00 AM to 8:00 PM<br><em>By appointment only</em></p>
 
-                <h3>Public Transport Access</h3>
+                <h3>Public transport access</h3>
                 <ul>
                     <li><strong>Train:</strong>
                         <ul>
@@ -110,7 +132,7 @@
                     </li>
                 </ul>
 
-                <h3>Nearby Parking</h3>
+                <h3>Nearby parking</h3>
                 <ul>
                     <li>Parking Indigo Versailles Marché Notre-Dame</li>
                     <li>Parking Indigo Versailles Saint-Cloud</li>
@@ -118,50 +140,51 @@
                 </ul>
             </div>
 
-            <!-- Contact Form -->
-            <div class="card contact-form-card">
-                <!-- Confirmation Message (Hidden by default) -->
-                <div id="confirmation-message" style="display: none; padding: 25px; background-color: var(--card-dark-bg); border: 1px solid var(--ochre-accent); border-radius: 4px; text-align: center; margin-bottom: 20px;">
+            <!-- Formulaire de contact -->
+            <div class="card contact-form-card" id="formulaire">
+                <h2>Contact form</h2>
+                <hr class="gold-divider">
+
+                <div id="confirmation-message" role="status" tabindex="-1" style="display: none; padding: 25px; background-color: var(--card-dark-bg); border: 1px solid var(--ochre-accent); border-radius: 4px; text-align: center; margin-bottom: 20px;">
                     <h3 style="color: var(--ochre-accent); font-size: 1.4rem; margin-bottom: 15px;">Thank you for your message.</h3>
                     <p style="color: var(--light-text); font-size: 1rem; line-height: 1.6;">
-                        Your inquiry has been successfully received. The firm will contact you as soon as possible.
+                        Your request has been received. The firm will reply as soon as possible.
                     </p>
                 </div>
 
                 <form id="contactForm" action="https://formspree.io/f/mbglojoq" method="POST" class="contact-form" autocomplete="on">
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="nom">Last Name *</label>
+                            <label for="nom">Last name *</label>
                             <input type="text" id="nom" name="nom" placeholder="Your last name" required autocomplete="family-name">
                         </div>
                         <div class="form-group">
-                            <label for="prenom">First Name *</label>
+                            <label for="prenom">First name *</label>
                             <input type="text" id="prenom" name="prenom" placeholder="Your first name" required autocomplete="given-name">
                         </div>
                     </div>
 
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="telephone">Phone Number *</label>
+                            <label for="telephone">Phone number *</label>
                             <input type="tel" id="telephone" name="telephone" placeholder="+33 6 00 00 00 00" required autocomplete="tel">
                         </div>
                         <div class="form-group">
-                            <label for="email">Email Address *</label>
+                            <label for="email">Email address *</label>
                             <input type="email" id="email" name="email" placeholder="your.email@example.com" required autocomplete="email">
                         </div>
                     </div>
 
                     <div class="form-group">
                         <label for="objet">Subject *</label>
-                        <input type="text" id="objet" name="_subject" placeholder="Ex: Tax Audit, VAT Advisory, Crypto-assets..." required autocomplete="off">
+                        <input type="text" id="objet" name="_subject" placeholder="E.g. Tax audit, VAT advice, Crypto-assets..." required autocomplete="off">
                     </div>
 
                     <div class="form-group">
-                        <label for="message">Your Message *</label>
+                        <label for="message">Your message *</label>
                         <textarea id="message" name="message" rows="5" placeholder="Briefly describe your situation..." required></textarea>
                     </div>
 
-                    <!-- Invisible Honeypot anti-spam field -->
                     <input type="text" name="_gotcha" style="display:none">
 
                     <div class="form-group checkbox-group">
@@ -169,18 +192,64 @@
                         <label for="rgpd">I accept the privacy policy and personal data protection terms.</label>
                     </div>
 
-                    <button type="submit" id="submitBtn" class="btn-submit">Send Inquiry</button>
+                    <button type="submit" id="submitBtn" class="btn-submit">Send inquiry</button>
                 </form>
             </div>
 
         </div>
     </section>
 
-    <!-- JavaScript Script for handling form submission and showing confirmation -->
+    </main>
+
+    <!-- Scripts -->
     <script>
+        const burgerBtn = document.getElementById('burgerBtn');
+        const mainNav = document.getElementById('mainNav');
+
+        burgerBtn.addEventListener('click', function() {
+            var open = burgerBtn.classList.toggle('active');
+            mainNav.classList.toggle('active', open);
+            burgerBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+        });
+
+        // La touche Échap referme le menu
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && burgerBtn.classList.contains('active')) {
+                burgerBtn.classList.remove('active');
+                mainNav.classList.remove('active');
+                burgerBtn.setAttribute('aria-expanded', 'false');
+                burgerBtn.focus();
+            }
+        });
+
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                burgerBtn.classList.remove('active');
+                mainNav.classList.remove('active');
+                burgerBtn.setAttribute('aria-expanded', 'false');
+            });
+        });
+
+        // Carte Google Maps : chargée uniquement après le clic du visiteur
+        var loadMapBtn = document.getElementById('loadMapBtn');
+        if (loadMapBtn) {
+            loadMapBtn.addEventListener('click', function() {
+                var consent = document.getElementById('mapConsent');
+                var iframe = document.createElement('iframe');
+                iframe.src = consent.getAttribute('data-src');
+                iframe.title = 'Google Maps - 7 Rue des Deux Portes, 78000 Versailles';
+                iframe.width = '100%';
+                iframe.height = '170';
+                iframe.style.border = '0';
+                iframe.setAttribute('allowfullscreen', '');
+                iframe.setAttribute('loading', 'lazy');
+                iframe.setAttribute('referrerpolicy', 'no-referrer-when-downgrade');
+                consent.replaceWith(iframe);
+            });
+        }
+
         document.getElementById('contactForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            
             var form = this;
             var btn = document.getElementById('submitBtn');
             btn.innerText = 'Sending...';
@@ -191,13 +260,13 @@
             fetch(form.action, {
                 method: form.method,
                 body: data,
-                headers: {
-                    'Accept': 'application/json'
-                }
+                headers: { 'Accept': 'application/json' }
             }).then(function(response) {
                 if (response.ok) {
                     form.style.display = 'none';
-                    document.getElementById('confirmation-message').style.display = 'block';
+                    var confirmation = document.getElementById('confirmation-message');
+                    confirmation.style.display = 'block';
+                    confirmation.focus();
                 } else {
                     response.json().then(function(data) {
                         if (data && data.errors) {
@@ -206,22 +275,54 @@
                             alert("An error occurred while sending your message. Please try again.");
                         }
                     });
-                    btn.innerText = 'Send Inquiry';
+                    btn.innerText = 'Send inquiry';
                     btn.disabled = false;
                 }
             }).catch(function(error) {
-                alert("Connection error. If testing locally without a web server, the browser may block the submission.");
-                btn.innerText = 'Send Inquiry';
+                alert("Connection error. Please try again.");
+                btn.innerText = 'Send inquiry';
                 btn.disabled = false;
             });
         });
+
+        // En-tête qui se réduit au défilement (PC)
+        const siteHeader = document.querySelector('.header');
+        function updateHeaderSize() {
+            siteHeader.classList.toggle('scrolled', window.scrollY > 30);
+        }
+        window.addEventListener('scroll', updateHeaderSize, { passive: true });
+        updateHeaderSize();
+
+        const observerOptions = { threshold: 0.1 };
+        const observer = new IntersectionObserver(function(entries, observer) {
+            entries.forEach(entry => {
+                // Révèle aussi les éléments déjà dépassés (saut d'ancre, touche Fin...)
+                if (entry.isIntersecting || entry.boundingClientRect.top < 0) {
+                    entry.target.classList.add('appear');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.scroll-fade-in').forEach(element => {
+            observer.observe(element);
+        });
+
+        // Sécurité : tout élément déjà passé au-dessus de l'écran (saut de page, touche Fin...) devient visible
+        window.addEventListener('scroll', function() {
+            document.querySelectorAll('.scroll-fade-in:not(.appear)').forEach(element => {
+                if (element.getBoundingClientRect().bottom < 0) {
+                    element.classList.add('appear');
+                    observer.unobserve(element);
+                }
+            });
+        }, { passive: true });
     </script>
 
-    <!-- Footer -->
     <footer class="footer">
         <div class="footer-container">
             <p><strong>Johann HELLEBOID Tax Lawyer</strong> - Versailles Bar</p>
-            <p>7 Rue des Deux Portes, 78000 Versailles, France</p>
+            <p>7 Rue des Deux Portes, 78000 Versailles</p>
             <p>Tel: +33 6 75 17 06 15</p>
             <p>Email: helleboidj@tutamail.com</p>
             <p><a href="mentions-legales-en.html" style="color: #bbb; text-decoration: underline;">Legal Notice & Privacy Policy</a></p>
@@ -229,9 +330,8 @@
         </div>
     </footer>
 
-    <!-- Floating Contact Button -->
-    <a href="contact-en.html" class="floating-contact-btn">
-        Contact Your Lawyer
+    <a href="#formulaire" class="floating-contact-btn">
+        Contact your lawyer
     </a>
 
 </body>
