@@ -1992,3 +1992,210 @@ main:focus {
         font-size: 0.9rem;
     }
 }
+
+/* Mobile : formulaire et coordonnées plus larges, champs empilés */
+@media screen and (max-width: 992px) {
+    .contact-section {
+        padding: 30px 14px !important;
+    }
+
+    .contact-info-card,
+    .contact-form-card {
+        padding: 24px 18px !important;
+    }
+
+    .form-row {
+        flex-direction: column !important;
+        align-items: stretch !important;
+        gap: 20px !important;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        padding: 14px;
+        font-size: 1rem;
+    }
+}
+
+/* ==========================================
+   Affichage des rubriques : le titre arrive juste sous l'en-tête et la rubrique tient à l'écran
+   ========================================== */
+@media screen and (min-width: 993px) {
+    .about,
+    .expertises,
+    .honoraires {
+        padding-top: 32px;
+        padding-bottom: 56px;
+    }
+
+    .expertises h2,
+    .honoraires h2 {
+        font-size: 2rem;
+        margin-bottom: 24px;
+    }
+
+    .expertises h2::after,
+    .honoraires h2::after {
+        margin-top: 10px;
+    }
+
+    .expertises .expertises-grid {
+        gap: 18px;
+    }
+
+    .expertises .expertise-card {
+        padding: 20px 24px;
+    }
+
+    .expertises .expertise-header {
+        gap: 10px;
+        margin-bottom: 8px;
+    }
+
+    .expertises .expertise-icon {
+        width: 32px;
+        height: 32px;
+    }
+
+    .honoraires-intro {
+        margin: -6px auto 22px;
+    }
+
+    .honoraires .card {
+        padding: 22px 26px;
+    }
+
+    .honoraires-info {
+        margin-top: 22px;
+        padding: 18px 24px;
+    }
+
+    .section-cta {
+        margin-top: 24px;
+    }
+}
+
+/* Mobile : moins d'espace au-dessus du titre de chaque rubrique */
+@media screen and (max-width: 992px) {
+    .about,
+    .expertises,
+    .honoraires {
+        padding-top: 28px;
+        padding-bottom: 40px;
+    }
+
+    .expertises h2,
+    .honoraires h2 {
+        margin-bottom: 22px;
+    }
+}
+
+/* Écrans PC peu hauts (portables) : rubriques un peu plus compactes pour tenir à l'écran */
+@media screen and (min-width: 993px) and (max-height: 820px) {
+    .about,
+    .expertises,
+    .honoraires {
+        padding-top: 20px;
+        padding-bottom: 40px;
+    }
+
+    .about-container {
+        grid-template-columns: 300px 1fr;
+        gap: 56px;
+    }
+
+    .about-content p {
+        font-size: 0.95rem;
+        line-height: 1.55;
+        margin-bottom: 10px;
+    }
+
+    .about-stats {
+        margin: 14px 0 16px;
+    }
+
+    .expertises h2,
+    .honoraires h2 {
+        font-size: 1.7rem;
+        margin-bottom: 16px;
+    }
+
+    .expertises .expertises-grid {
+        gap: 14px;
+    }
+
+    .expertises .expertise-card {
+        padding: 14px 20px;
+    }
+
+    .expertises .expertise-header {
+        flex-direction: row;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 6px;
+    }
+
+    .expertises .expertise-icon {
+        width: 26px;
+        height: 26px;
+    }
+
+    .expertise-content p {
+        font-size: 0.9rem;
+        line-height: 1.45;
+    }
+
+    .honoraires .card {
+        padding: 16px 22px;
+    }
+
+    .honoraires-info {
+        margin-top: 14px;
+        padding: 14px 20px;
+    }
+
+    .honoraires-info p {
+        font-size: 0.9rem;
+        margin-bottom: 6px;
+    }
+
+    .section-cta {
+        margin-top: 16px;
+    }
+}
+
+/* Mobile : cartes d'expertise plus rapprochées pour que la rubrique tienne à l'écran */
+@media screen and (max-width: 992px) {
+    .expertises .expertises-grid {
+        gap: 0 !important;
+    }
+}
+
+/* Chaque rubrique occupe au moins la hauteur de l'écran : en arrivant sur une rubrique, on ne voit pas le début de la suivante */
+@media screen and (min-width: 993px) {
+    .about,
+    .expertises,
+    .honoraires {
+        min-height: calc(100vh - 114px);
+        box-sizing: border-box;
+    }
+
+    .about {
+        display: flex;
+        align-items: center;
+    }
+
+    .about .about-container {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .about,
+    .expertises,
+    .honoraires {
+        min-height: 100vh;
+        min-height: 100svh;
+        box-sizing: border-box;
+    }
+}
